@@ -25,7 +25,7 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    refreshToken: [String],
+    refreshToken: String,
     otp: {
       type: String,
       default: '',
