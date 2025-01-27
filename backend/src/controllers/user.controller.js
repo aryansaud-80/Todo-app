@@ -468,3 +468,44 @@ export const deleteUser = asyncHandler(async (req, res) => {
     .status(200)
     .json(new ApiResponse(200, 'User successfully deleted', {}));
 });
+
+export const refreshToken = asyncHandler(async (req, res) => {
+  const token = req.cookies?.refreshToken;
+
+  if (!token) {
+    throw new ApiError(400, 'Invalid refresh token');
+  }
+
+  let decodedToken;
+
+  try {
+    decodedToken = jwt.verify(token, process.env.REFRESH_TOKEN_SECRET);
+  } catch (error) {
+    throw new ApiError(401, 'Invalid refresh token');
+  }
+
+  const user = await User.findById(decodedToken.userId);
+
+  if (!user) {
+    throw new ApiError(404, 'User not found');
+  }
+
+  if (user.refreshToken !== token) {
+    throw new ApiError(401, 'Invalid refresh token');
+  }
+
+  const { refreshToken, accessToken } = await generateTokens(user._id);
+
+  user.refreshToken = refreshToken;
+
+  await user.save({ validateBeforeSave: false });
+
+  return res
+    .status(200)
+    .cookie('refreshToken', refreshToken, options)
+    .json(
+      new ApiResponse(200, 'Token refreshed successfully', {
+        accessToken,
+      }),
+    );
+});

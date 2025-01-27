@@ -22,7 +22,9 @@ app.use(
 
 // Routes
 import userRouter from './routes/user.routes.js';
+import todoRouter from './routes/todo.routes.js';
 
-app.use('/api/todo', userRouter);
+app.use('/api/users', userRouter);
+app.use('/api/todos', todoRouter);
 
 export default app;
