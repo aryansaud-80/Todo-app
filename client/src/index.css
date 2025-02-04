@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
-
-:root{
+:root {
   /* Background colors */
   --bg-primary: #f9f9f9;
   --bg-secondary: #f3f3f3;
@@ -45,6 +44,20 @@
   --button-tertiary: #28a745;
   --button-quaternary: #dc3545;
   --button-quinary: #ffc107;
+}
+
+body {
+  background: var(--bg-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 button {
