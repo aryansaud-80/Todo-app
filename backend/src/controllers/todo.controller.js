@@ -236,7 +236,7 @@ export const createSubTodo = asyncHandler(async (req, res) => {
     throw new ApiError(401, 'Unauthorized');
   }
 
-  const { title, isCompleted } = req.body;
+  const { title, description, isCompleted } = req.body;
   const { todoId } = req.params;
 
   if (!title) {
@@ -266,6 +266,7 @@ export const createSubTodo = asyncHandler(async (req, res) => {
   const subTodo = await SubTodo.create({
     title,
     isCompleted,
+    description,
     todo: todo._id,
   });
 

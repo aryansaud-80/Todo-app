@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+
+:root{
+  /* Background colors */
+  --bg-primary: #f9f9f9;
+  --bg-secondary: #f3f3f3;
+  --bg-tertiary: #e9e9e9;
+  --bg-quaternary: #d9d9d9;
+  --bg-quinary: #c9c9c9;
+  --bg-senary: #b9b9b9;
+  --bg-septenary: #a9a9a9;
+  --bg-octonary: #999;
+  --bg-nonary: #898989;
+  --bg-denary: #797979;
+
+  /* Text colors */
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-tertiary: #999;
+  --text-quaternary: #ccc;
+  --text-quinary: #fff;
+
+  /* Border colors */
+  --border-primary: #ccc;
+  --border-secondary: #999;
+  --border-tertiary: #666;
+  --border-quaternary: #333;
+
+  /* Shadow colors */
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-secondary: rgba(0, 0, 0, 0.2);
+  --shadow-tertiary: rgba(0, 0, 0, 0.3);
+
+  /* Accent colors */
+  --accent-primary: #007bff;
+  --accent-secondary: #6c757d;
+  --accent-tertiary: #28a745;
+  --accent-quaternary: #dc3545;
+  --accent-quinary: #ffc107;
+
+  /* Button colors */
+  --button-primary: #007bff;
+  --button-secondary: #6c757d;
+  --button-tertiary: #28a745;
+  --button-quaternary: #dc3545;
+  --button-quinary: #ffc107;
+}
+
+button {
+  cursor: pointer;
+}

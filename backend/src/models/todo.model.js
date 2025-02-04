@@ -32,6 +32,10 @@ const todoSchema = new Schema(
       type: String,
       default: '',
     },
+    label: {
+      type: String,
+      default: '',
+    },
   },
   { timestamps: true },
 );

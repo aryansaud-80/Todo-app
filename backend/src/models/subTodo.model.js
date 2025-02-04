@@ -7,6 +7,11 @@ const subTodoSchema = new Schema(
       required: true,
       minlength: 3,
     },
+    description: {
+      type: String,
+      required: true,
+      minlength: 3,
+    },
     isCompleted: {
       type: Boolean,
       default: false,
